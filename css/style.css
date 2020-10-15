@@ -10,8 +10,6 @@
     --primary-font: 'DM Sans', sans-serif;
     --dark-body: #000000;
     --light-col: #ffffff;
-    --dark-panel: rgba(255, 255, 255, 0.05);
-    --tete-r: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 31.25%, rgba(0, 0, 0, 0) 68.75%, #000000 100%);
 }
 
 body {
@@ -30,15 +28,9 @@ body {
 
 #mainNav .container {
     max-width: 1440px;
-    padding-left: 0;
-    margin: 1.25rem 4rem;
+    padding: 1.25rem 4rem;
+    margin: 0 auto;
 
-}
-
-@media screen and (max-width: 576px) {
-    #mainNav .container {
-        margin: 0px;
-    }
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -48,8 +40,7 @@ body {
 #mainNav .button-signup {
     background: #e7332b;
     border-radius: 20px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding: 10px 1.5rem;
     border: 1px solid #e7332b;
 }
 
@@ -166,7 +157,7 @@ body {
 .card {
     width: 280px;
     height: 314px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 16px;
 }
@@ -191,9 +182,17 @@ h2+p {
     color: rgba(255, 255, 255, 0.75);
 }
 
+#plans .card p {
+    font-size: 1rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 40px;
+}
+
 #plans h3 {
     font-weight: 500;
     font-size: 20px;
+    margin-bottom: 0;
 }
 
 #plans h1 {
@@ -207,6 +206,7 @@ h2+p {
     background: #E7332B;
     border-radius: 20px;
     color: #ffffff;
+    padding: 10px 24px;
 }
 
 #plans .btn:hover {
@@ -237,8 +237,12 @@ h2+p {
 /* ----section 3 ------*/
 
 /* section title stylings */
+#faq {
+    margin-bottom: 10rem;
+}
 
-.sect__lead {
+
+#faq .sect__lead {
     font-family: var(--primary-font);
     color: var(--light-col);
     font-weight: 500;
@@ -254,17 +258,31 @@ h2+p {
 
 .accordion {
     cursor: pointer;
-    padding: 18px;
+    padding: 16px 20px;
     width: 100%;
     border: none;
     text-align: left;
     outline: none;
     transition: 0.4s;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
 }
 
-.accordion,
+.accordionButton {
+    width: 80%;
+}
+
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .panel {
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 8px;
 }
 
@@ -273,23 +291,17 @@ h2+p {
     color: var(--light-col);
     float: right;
     margin-left: 5px;
+    font-size: 1.5rem;
 }
 
-.details .active:after {
-    content: "\2212";
+.details-head.active:after {
+    content: "\00D7";
 }
 
 .panel {
     display: none;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-}
-
-.panel,
-.panel-txt,
-.accordion {
-    background-color: var(--dark-panel);
-    color: var(--light-col);
 }
 
 .panel-txt {
@@ -301,9 +313,10 @@ h2+p {
     font-family: var(--primary-font);
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 20.83px;
-    background: var(--dark-panel);
+    font-size: 1rem;
+    line-height: 21px;
+    background: rgba(255, 255, 255, 0.03);
+    color: rgba(255, 255, 255, 0.75);
 }
 
 .details-head.active {
@@ -324,29 +337,44 @@ button:focus {
 }
 
 /* accordion ends */
+/* FAQ media Query */
 
+@media screen and (max-width: 768px) {
+    #faq {
+        margin-bottom: 5rem;
+    }
+}
 
-/* contact section */
+/* contact section*/
 
 #contact {
-    border: 1px solid var(--tete-r);
-    margin-top: 9rem;
+    background-color: rgba(255, 255, 255, 0.03);
+    margin: 0 auto;
+    border: 1px solid transparent;
+    border-image: linear-gradient(90deg, #000000 0%, rgba(255, 255, 255, 0.15) 31.25%, rgba(255, 255, 255, 0.15) 68.75%, #000000 100%);
+    border-image-slice: 1;
 }
 
 .contact {
-    background-image: url(../img/footer.svg);
-    background-color: rgba(255, 255, 255, 0.05);
     height: 211px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-    border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+#contact .sect__lead {
+    font-family: var(--primary-font);
+    color: var(--light-col);
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 42px;
+    font-style: normal;
 }
 
 #contact .btn {
     font-weight: 500;
-    font-size: 16px;
+    font-size: 1rem;
     background: #E7332B;
     border-radius: 20px;
     color: #ffffff;
+    padding: 10px 24px;
 }
 
 #contact .btn:hover {
@@ -355,13 +383,15 @@ button:focus {
     border-color: #E7332B;
 }
 
+/* footer section */
 .foot-links {
     font-family: var(--primary-font);
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
     font-style: normal;
     line-height: 20.83px;
     color: var(--light-col);
+    margin-right: 40px;
 }
 
 .ft-links {
@@ -372,21 +402,65 @@ button:focus {
     color: var(--light-col);
 }
 
+.copyRight {
+    font-family: var(--primary-font);
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 20.83px;
+    color: var(--light-col);
+}
+
+/* contact/footer media queries */
+
 @media screen and (max-width:620px) {
-    .sect__lead {
-        font-size: 22px;
+    #contact .sect__lead {
+        font-size: 1.375rem;
         line-height: 28.6px;
     }
 
-    #contact {
-        margin-top: 4rem;
+    .footSection {
+        flex-direction: column;
     }
 
-    .foot {
+    .linksGroup {
         flex-direction: column;
+        align-items: center;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
     }
 
     .foot-links {
         margin-top: 1rem;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 991px) and (min-width:768px) {
+    .foot-links {
+        margin-right: 15px;
+    }
+
+    #contact .sect__lead {
+        font-size: 1.8rem;
+        line-height: 28.6px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .footSection {
+        flex-direction: column;
+    }
+
+    .linksGroup {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+
+    .foot-links {
+        margin-top: 1rem;
+        margin-right: 0;
     }
 }
