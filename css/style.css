@@ -21,27 +21,36 @@ body {
 }
 
 /* ----section 1 ------*/
+/*Logo Sizing*/
+.logoName {
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 26px;
+    margin-bottom: 0px;
+}
+
+
 /*Navbar*/
 #mainNav {
     background-color: rgba(0, 0, 0, 0.781);
 }
 
-#mainNav .container {
-    max-width: 1440px;
-    padding: 1.25rem 4rem;
-    margin: 0 auto;
-
+#mainNav ul a {
+     line-height: 21px;
+    font-weight: 500;
 }
-
 .navbar-dark .navbar-nav .nav-link {
-    color: white;
-}
+    color: white;   
+   }
 
 #mainNav .button-signup {
     background: #e7332b;
     border-radius: 20px;
     padding: 10px 1.5rem;
     border: 1px solid #e7332b;
+    line-height: 21px;
+    font-weight: 500;
+    height: 41px;
 }
 
 #mainNav .button-signup:hover {
@@ -132,8 +141,8 @@ body {
 /* Media Queries */
 @media screen and (max-width:767px) {
     #info .row {
-        margin-bottom: 50px;
-        margin-top: 50px;
+        margin-bottom: 100px;
+        margin-top: 140px;
     }
 
     .infogrid {
@@ -230,7 +239,7 @@ h2+p {
 
 @media screen and (max-width: 767px) {
     #plans .box-group {
-        margin-bottom: 80px;
+        margin-bottom: 140px;
     }
 }
 
@@ -315,7 +324,7 @@ h2+p {
     font-weight: 400;
     font-size: 1rem;
     line-height: 21px;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.05);
     color: rgba(255, 255, 255, 0.75);
 }
 
@@ -348,7 +357,7 @@ button:focus {
 /* contact section*/
 
 #contact {
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: rgba(255, 255, 255, 0.05);
     margin: 0 auto;
     border: 1px solid transparent;
     border-image: linear-gradient(90deg, #000000 0%, rgba(255, 255, 255, 0.15) 31.25%, rgba(255, 255, 255, 0.15) 68.75%, #000000 100%);
@@ -414,6 +423,10 @@ button:focus {
 /* contact/footer media queries */
 
 @media screen and (max-width:620px) {
+    #contact {
+        margin-top: 140px;
+    }
+    
     #contact .sect__lead {
         font-size: 1.375rem;
         line-height: 28.6px;
