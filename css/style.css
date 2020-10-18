@@ -19,7 +19,7 @@ body {
     color: #ffffff;
     font-weight: 400;
     background: var(--dark-body);
-    height: 2914px;
+    height: 2750px;
 }
 
 /* ----section 1 ------*/
@@ -355,9 +355,9 @@ button:focus {
 /* accordion ends */
 /* FAQ media Query */
 @media screen and (max-width:575px) {
-   
-.accordionButton {
-    width: 100%;
+
+    .accordionButton {
+        width: 100%;
     }
 }
 
